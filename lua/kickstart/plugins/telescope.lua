@@ -105,5 +105,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		map("<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+
+		local ignore_patterns = {
+			"*.o",
+			"*.d",
+			"build/*",
+		}
+		require("telescope.config").set_defaults({
+			file_ignore_patterns = ignore_patterns,
+		})
 	end,
 }

@@ -47,8 +47,14 @@ map("n", "<leader>bd", function()
 	vim.cmd("%bd")
 	vim.cmd("e#")
 end, { noremap = true, silent = true, desc = "Close all buffers" })
-map("n", "<C-j>", vim.cmd.bn) -- Buffer next
-map("n", "<C-k>", vim.cmd.bp) -- Buffer previous
+map("n", "<Tab>", function()
+	vim.cmd("w")
+	vim.cmd("bnext")
+end) -- Buffer next
+map("n", "<S-Tab>", function()
+	vim.cmd("w")
+	vim.cmd("bnext")
+end) -- Buffer next
 
 -- Using the void register
 map("n", "<leader>d", '"_d', { noremap = true, silent = false, desc = "[D]elete to void" })
