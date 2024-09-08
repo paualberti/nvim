@@ -47,7 +47,7 @@ return { -- Autocompletion
 				end,
 			},
 			completion = {
-				completeopt = "menu,menuone,longest,noinsert,noselect",
+				completeopt = "menu,menuone,longest,noinsert",
 				keyword_length = 1,
 				max_item_count = 20,
 			},

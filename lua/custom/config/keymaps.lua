@@ -31,16 +31,16 @@ map("i", "<C-d>", function()
 	vim.diagnostic.goto_next({ float = false })
 	vim.cmd('norm "_diw')
 end, { noremap = true, silent = true })
-map("n", "\\", function()
-	vim.cmd("%bd")
-	vim.cmd("edit .")
-end, { noremap = true, silent = true })
+-- map("n", "\\", function()
+-- 	vim.cmd("bd")
+-- 	vim.cmd("edit .")
+-- end, { noremap = true, silent = true })
 
 map("v", "<", "<gv") -- Indent left
 map("v", ">", ">gv") -- Indent right
 map("i", "jk", "<Esc>") -- Escape
 map("i", "kj", "<Esc>") -- Escape
-map("v", "<leader>r", '"hy:%s/<C-r>h/', { noremap = true, silent = true, desc = "[R]eplace text" })
+map("v", "<leader>r", '"hy:%s/<C-r>h/', { noremap = true, silent = false, desc = "[R]eplace text" })
 
 -- Buffer management
 map("n", "<leader>bd", function()
@@ -51,9 +51,9 @@ map("n", "<C-j>", vim.cmd.bn) -- Buffer next
 map("n", "<C-k>", vim.cmd.bp) -- Buffer previous
 
 -- Using the void register
-map("n", "<leader>d", '"_d', { noremap = true, silent = true, desc = "[D]elete to void" })
-map("v", "<leader>d", '"_d', { noremap = true, silent = true, desc = "[D]elete to void" })
-map("x", "<leader>p", '"_dp', { noremap = true, silent = true, desc = "[P]aste & repeat" })
+map("n", "<leader>d", '"_d', { noremap = true, silent = false, desc = "[D]elete to void" })
+map("v", "<leader>d", '"_d', { noremap = true, silent = false, desc = "[D]elete to void" })
+map("x", "<leader>p", '"_dP', { noremap = true, silent = false, desc = "[P]aste & repeat" })
 
 map("n", "<leader>te", function()
 	vim.cmd("vsplit")
