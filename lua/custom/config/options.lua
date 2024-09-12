@@ -20,12 +20,12 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 1
 vim.opt.showmode = false
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.inccommand = "split"
 vim.opt.guicursor =
 	"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait400-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"

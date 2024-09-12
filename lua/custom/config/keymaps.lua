@@ -1,20 +1,15 @@
 local map = function(mode, lhs, rhs, opts)
-	opts = opts or {}
+	opts = { noremap = true, silent = true } or opts
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 -- Diagnostic keymaps
-map(
-	"n",
-	"<leader>q",
-	vim.diagnostic.setloclist,
-	{ noremap = true, silent = true, desc = "Open diagnostic [Q]uickfix list" }
-)
+map("n", "<leader>q", vim.diagnostic.setloclist, {})
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-map("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal mode" })
-map("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal mode" })
-map("t", "kj", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal mode" })
+map("t", "<Esc>", "<C-\\><C-n>")
+map("t", "jk", "<C-\\><C-n>")
+map("t", "kj", "<C-\\><C-n>")
 
 -- Useful keymaps
 map("n", "j", "gj") -- Visual j
@@ -30,7 +25,7 @@ map("i", "<C-c>", "<Esc>") -- Standardize <Esc>
 map("i", "<C-d>", function()
 	vim.diagnostic.goto_next({ float = false })
 	vim.cmd('norm "_diw')
-end, { noremap = true, silent = true })
+end)
 -- map("n", "\\", function()
 -- 	vim.cmd("bd")
 -- 	vim.cmd("edit .")
@@ -53,7 +48,7 @@ map("n", "<Tab>", function()
 end) -- Buffer next
 map("n", "<S-Tab>", function()
 	vim.cmd("w")
-	vim.cmd("bnext")
+	vim.cmd("bprevious")
 end) -- Buffer next
 
 -- Using the void register
