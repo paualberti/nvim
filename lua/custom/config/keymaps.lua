@@ -7,9 +7,7 @@ end
 function Temporary_hlsearch(seconds) -- Enable hlsearch
 	vim.opt.hlsearch = true
 	local duration_ms = seconds * 1000
-	vim.defer_fn(function()
-		vim.opt.hlsearch = false
-	end, duration_ms)
+	vim.defer_fn(function() vim.opt.hlsearch = false end, duration_ms)
 end
 
 -- Diagnostic keymaps
