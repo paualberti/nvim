@@ -1,4 +1,13 @@
--- Delete trailing whitspaces
+-- disable auto comment new line
+vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
+
+-- resize neovim split when terminal is resized
+vim.api.nvim_command("autocmd VimResized * wincmd =")
+
+-- enable italic comments
+vim.api.nvim_create_autocmd("BufEnter", { command = [[highlight Comment cterm=italic gui=italic]] })
+
+-- delete trailing whitspaces
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*.*" },
 	callback = function()
@@ -12,25 +21,30 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
 	end,
 })
 
--- Disable auto comment on new line
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*.*",
+-- go to last location when opening a buffer
+vim.api.nvim_create_autocmd("BufReadPost", {
 	callback = function()
-		vim.opt_local.formatoptions:remove({ "r", "o" })
+		local mark = vim.api.nvim_buf_get_mark(0, '"')
+		local lcount = vim.api.nvim_buf_line_count(0)
+		if mark[1] > 0 and mark[1] <= lcount then
+			pcall(vim.api.nvim_win_set_cursor, 0, mark)
+		end
 	end,
 })
 
--- Goto last exited current buffer
-vim.api.nvim_create_autocmd("BufWinEnter", {
-	pattern = "*.*",
-	callback = function()
-		vim.cmd('norm `"')
-	end,
+-- show cursor line only in active window
+local cursorGrp = vim.api.nvim_create_augroup("CursorLine", { clear = true })
+vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
+	pattern = "*",
+	command = "set cursorline",
+	group = cursorGrp,
 })
+vim.api.nvim_create_autocmd(
+	{ "InsertEnter", "WinLeave" },
+	{ pattern = "*", command = "set nocursorline", group = cursorGrp }
+)

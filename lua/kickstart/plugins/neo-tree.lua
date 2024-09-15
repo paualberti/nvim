@@ -1,5 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
+	lazy = true,
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -319,11 +320,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "\\", "<Cmd> Neotree reveal <CR>", { noremap = true, silent = true })
-		vim.keymap.set("n", "|", "<Cmd> Neotree close <CR>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<Up>", "<C-w>3+", { noremap = true, silent = true })
-		vim.keymap.set("n", "<Down>", "<C-w>3-", { noremap = true, silent = true })
-		vim.keymap.set("n", "<Right>", "<C-w>3>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<Left>", "<C-w>3<", { noremap = true, silent = true })
+		-- vim.keymap.set("n", "\\", "<Cmd> Neotree reveal <CR>", { noremap = true, silent = true })
+		-- vim.keymap.set("n", "|", "<Cmd> Neotree close <CR>", { noremap = true, silent = true })
 	end,
 }
