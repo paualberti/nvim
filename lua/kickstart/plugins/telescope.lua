@@ -51,7 +51,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 					i = {
 						["<C-j>"] = actions.move_selection_next,
 						["<C-k>"] = actions.move_selection_previous,
-						["<C-e>"] = actions.close,
+						["<leader><leader>"] = actions.close,
 					},
 				},
 			},
