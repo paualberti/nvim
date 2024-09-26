@@ -5,24 +5,51 @@ return {
 		local mark = require("harpoon.mark")
 		local ui = require("harpoon.ui")
 
+		local map = function(lhs, rhs, opts)
+			opts = opts or { noremap = true, silent = true }
+			vim.keymap.set("n", lhs, rhs, opts)
+		end
+
 		-- Keymaps for Harpoon
-		vim.keymap.set("n", "<leader>a", mark.add_file) -- Add file to Harpoon
-		vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu) -- Toggle Harpoon quick menu
+		map("<leader>a", mark.add_file, { noremap = true, silent = true, desc = "[A]dd file to harpoon" }) -- Add file to Harpoon
+		map("<leader>ho", ui.toggle_quick_menu, { noremap = true, silent = true, desc = "[H]arpoon [O]pen" }) -- Toggle Harpoon quick menu
 
 		-- Map <Tab> to navigate to the next file in Harpoon's Quick Menu
-		vim.keymap.set("n", "<Tab>", function() ui.nav_next() end)
+		map("<Tab>", function()
+			ui.nav_next()
+		end)
 
 		-- Map <S-Tab> to navigate to the previous file in Harpoon's Quick Menu
-		vim.keymap.set("n", "<S-Tab>", function() ui.nav_prev() end)
+		map("<S-Tab>", function()
+			ui.nav_prev()
+		end)
 
-		vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end) -- Navigate to file 1
-		vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end) -- Navigate to file 2
-		vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end) -- Navigate to file 3
-		vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end) -- Navigate to file 4
-		vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end) -- Navigate to file 4
-		vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end) -- Navigate to file 4
-		vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end) -- Navigate to file 4
-		vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end) -- Navigate to file 4
-		vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end) -- Navigate to file 4
+		map("<leader>1", function()
+			ui.nav_file(1)
+		end, { noremap = true, silent = true, desc = "Harpoon file [1]" }) -- Navigate to file 1
+		map("<leader>2", function()
+			ui.nav_file(2)
+		end, { noremap = true, silent = true, desc = "Harpoon file [2]" }) -- Navigate to file 2
+		map("<leader>3", function()
+			ui.nav_file(3)
+		end, { noremap = true, silent = true, desc = "Harpoon file [3]" }) -- Navigate to file 3
+		map("<leader>4", function()
+			ui.nav_file(4)
+		end, { noremap = true, silent = true, desc = "Harpoon file [4]" }) -- Navigate to file 4
+		map("<leader>5", function()
+			ui.nav_file(5)
+		end, { noremap = true, silent = true, desc = "Harpoon file [5]" }) -- Navigate to file 5
+		map("<leader>6", function()
+			ui.nav_file(6)
+		end, { noremap = true, silent = true, desc = "Harpoon file [6]" }) -- Navigate to file 6
+		map("<leader>7", function()
+			ui.nav_file(7)
+		end, { noremap = true, silent = true, desc = "Harpoon file [7]" }) -- Navigate to file 7
+		map("<leader>8", function()
+			ui.nav_file(8)
+		end, { noremap = true, silent = true, desc = "Harpoon file [8]" }) -- Navigate to file 8
+		map("<leader>9", function()
+			ui.nav_file(9)
+		end, { noremap = true, silent = true, desc = "Harpoon file [9]" }) -- Navigate to file 9
 	end,
 }

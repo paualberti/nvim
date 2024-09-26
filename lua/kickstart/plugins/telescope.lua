@@ -68,7 +68,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		pcall(require("telescope").load_extension, "ui-select")
 
 		local map = function(lhs, rhs, opts)
-			opts = opts or {}
 			vim.keymap.set("n", lhs, rhs, opts)
 		end
 

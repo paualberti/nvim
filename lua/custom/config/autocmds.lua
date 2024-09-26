@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	end,
 })
 
--- Highlight when yanking (copying) text
+-- highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function() vim.highlight.on_yank() end,
 })
