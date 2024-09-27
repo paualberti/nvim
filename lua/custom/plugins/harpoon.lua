@@ -36,20 +36,5 @@ return {
 		map("<leader>4", function()
 			ui.nav_file(4)
 		end, { noremap = true, silent = true, desc = "Harpoon file [4]" }) -- Navigate to file 4
-		map("<leader>5", function()
-			ui.nav_file(5)
-		end, { noremap = true, silent = true, desc = "Harpoon file [5]" }) -- Navigate to file 5
-		map("<leader>6", function()
-			ui.nav_file(6)
-		end, { noremap = true, silent = true, desc = "Harpoon file [6]" }) -- Navigate to file 6
-		map("<leader>7", function()
-			ui.nav_file(7)
-		end, { noremap = true, silent = true, desc = "Harpoon file [7]" }) -- Navigate to file 7
-		map("<leader>8", function()
-			ui.nav_file(8)
-		end, { noremap = true, silent = true, desc = "Harpoon file [8]" }) -- Navigate to file 8
-		map("<leader>9", function()
-			ui.nav_file(9)
-		end, { noremap = true, silent = true, desc = "Harpoon file [9]" }) -- Navigate to file 9
 	end,
 }
