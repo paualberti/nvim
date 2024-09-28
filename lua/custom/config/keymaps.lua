@@ -53,10 +53,9 @@ vmap("J", ":m '>+1<CR>gv=gv")
 vmap("K", ":m '<-2<CR>gv=gv")
 
 -- Don't yank deleted text
-nmap("<leader>d", '"_d', { noremap = true, silent = false })
-vmap("<leader>d", '"_d', { noremap = true, silent = false })
+vmap("<leader>d", '"_d')
 nmap("x", '"_x')
-vim.keymap.set("x", "p", '"_dP')
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 nmap("<leader>e", "<cmd>Ex<CR>")
 nmap(
