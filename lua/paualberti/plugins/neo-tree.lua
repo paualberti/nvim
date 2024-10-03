@@ -2,6 +2,7 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	lazy = true,
 	branch = "v3.x",
+	opts = {},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -41,14 +42,14 @@ return {
 			enable_diagnostics = true,
 			open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 			sort_case_insensitive = false, -- used when sorting files and directories in the tree
-			sort_function = nil, -- use a custom function for sorting files and directories in the tree
-			-- sort_function = function (a,b)
-			--       if a.type == b.type then
-			--           return a.path > b.path
-			--       else
-			--           return a.type > b.type
-			--       end
-			--   end , -- this sorts files and directories descendantly
+			-- sort_function = nil, -- use a custom function for sorting files and directories in the tree
+			sort_function = function(a, b)
+				if a.type == b.type then
+					return a.path < b.path
+				else
+					return a.type < b.type
+				end
+			end, -- this sorts files and directories descendantly
 			default_component_configs = {
 				container = {
 					enable_character_fade = true,
@@ -320,7 +321,9 @@ return {
 			},
 		})
 
-		-- vim.keymap.set("n", "\\", "<Cmd> Neotree reveal <CR>", { noremap = true, silent = true })
-		-- vim.keymap.set("n", "|", "<Cmd> Neotree close <CR>", { noremap = true, silent = true })
+		vim.keymap.set("n", "\\", function()
+			vim.cmd("Neotree toggle")
+			vim.cmd("set rnu")
+		end, { noremap = true, silent = true })
 	end,
 }

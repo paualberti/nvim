@@ -1,5 +1,9 @@
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = true
+-- Set mapleader globally
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+-- Set number and relativenumber in netrw
 vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -21,24 +25,24 @@ require("paualberti.config.keymaps")
 require("lazy").setup({
 	"tpope/vim-sleuth",
 	-- { import = "paualberti.plugins" },
-	-- { import = "kickstart.plugins" },
 	{
+		-- require("paualberti.plugins.bufferline"),
 		require("paualberti.plugins.harpoon"),
-		require("kickstart.plugins.conform"),
-		require("kickstart.plugins.gitsigns"),
-		require("kickstart.plugins.indent_line"),
-		require("kickstart.plugins.lazydev"),
-		require("kickstart.plugins.lint"),
-		require("kickstart.plugins.luvit-meta"),
-		require("kickstart.plugins.neo-tree"),
-		require("kickstart.plugins.nvim-autopairs"),
-		require("kickstart.plugins.nvim-cmp"),
-		require("kickstart.plugins.nvim-lspconfig"),
-		require("kickstart.plugins.nvim-treesitter"),
-		require("kickstart.plugins.telescope"),
-		require("kickstart.plugins.todo-comments"),
-		require("kickstart.plugins.tokyonight"),
-		require("kickstart.plugins.which-key"),
+		require("paualberti.plugins.conform"),
+		require("paualberti.plugins.gitsigns"),
+		require("paualberti.plugins.indent-blankline"),
+		require("paualberti.plugins.lazydev"),
+		require("paualberti.plugins.lint"),
+		require("paualberti.plugins.luvit-meta"),
+		require("paualberti.plugins.neo-tree"),
+		require("paualberti.plugins.nvim-autopairs"),
+		require("paualberti.plugins.nvim-cmp"),
+		require("paualberti.plugins.nvim-lspconfig"),
+		require("paualberti.plugins.nvim-treesitter"),
+		require("paualberti.plugins.telescope"),
+		require("paualberti.plugins.todo-comments"),
+		require("paualberti.plugins.tokyonight"),
+		require("paualberti.plugins.which-key"),
 	},
 }, {
 	ui = {
