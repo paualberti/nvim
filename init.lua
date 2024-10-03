@@ -33,6 +33,7 @@ require("lazy").setup({
 		require("paualberti.plugins.indent-blankline"),
 		require("paualberti.plugins.lazydev"),
 		require("paualberti.plugins.lint"),
+		-- require("paualberti.plugins.lsp-zero"),
 		require("paualberti.plugins.luvit-meta"),
 		require("paualberti.plugins.neo-tree"),
 		require("paualberti.plugins.nvim-autopairs"),
