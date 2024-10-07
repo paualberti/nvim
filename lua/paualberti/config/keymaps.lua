@@ -60,7 +60,7 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 nmap("<leader>e", "<cmd>Ex<CR>")
 nmap(
 	"<leader>hl",
-	"<cmd>lua Temporary_hlsearch(2) <CR>",
+	"<cmd>lua Temporary_hlsearch(3) <CR>",
 	{ noremap = true, silent = true, desc = "[H]igh[L]ight search" }
 )
 nmap("<leader>to", function()
