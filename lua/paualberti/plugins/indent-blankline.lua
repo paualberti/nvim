@@ -4,6 +4,4 @@ return { -- Add indentation guides even on blank lines
 	-- Enable `lukas-reineke/indent-blankline.nvim`
 	-- See `:help ibl`
 	main = "ibl",
-	opts = {},
-	vim.keymap.set("n", "<leader>i", "<cmd> Lazy load indent-blankline.nvim <CR>"),
 }

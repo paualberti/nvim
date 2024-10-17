@@ -26,7 +26,7 @@ require("lazy").setup({
 	"tpope/vim-sleuth",
 	-- { import = "paualberti.plugins" },
 	{
-		-- require("paualberti.plugins.bufferline"),
+		require("paualberti.plugins.nvim-java"),
 		require("paualberti.plugins.lsp-zero"),
 		require("paualberti.plugins.conform"),
 		require("paualberti.plugins.gitsigns"),
