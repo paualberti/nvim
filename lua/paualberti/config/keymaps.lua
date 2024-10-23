@@ -21,7 +21,7 @@ function Temporary_hlsearch(seconds) -- Enable hlsearch
 end
 
 -- Diagnostic keymaps
-nmap("<leader>q", vim.diagnostic.setloclist, { noremap = true, silent = true, desc = "[Q]uick_fix" })
+nmap("<leader>qf", vim.diagnostic.setloclist, { noremap = true, silent = true, desc = "[Q]uick_[F]ix" })
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
@@ -43,6 +43,7 @@ nmap("<C-Up>", "<C-w>3+") -- Increase window height
 nmap("<C-Down>", "<C-w>3-") -- Decrease window height
 nmap("<C-Right>", "<C-w>3>") -- Increase window width
 nmap("<C-Left>", "<C-w>3<") -- Decrease window width
+nmap("<leader>qs", "<cmd> wq <CR>", { noremap = true, silent = true, desc = "[Q]uit [S]aving" })
 
 vmap("<", "<gv") -- Indent left
 vmap(">", ">gv") -- Indent right

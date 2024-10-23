@@ -24,31 +24,7 @@ require("paualberti.config.keymaps")
 
 require("lazy").setup({
 	"tpope/vim-sleuth",
-	-- { import = "paualberti.plugins" },
-	{
-		require("paualberti.plugins.conform"),
-		require("paualberti.plugins.gitsigns"),
-		require("paualberti.plugins.harpoon"),
-		require("paualberti.plugins.indent-blankline"),
-		require("paualberti.plugins.lazydev"),
-		require("paualberti.plugins.lint"),
-		require("paualberti.plugins.lsp-zero"),
-		require("paualberti.plugins.luvit-meta"),
-		require("paualberti.plugins.marks"),
-		require("paualberti.plugins.neo-tree"),
-		require("paualberti.plugins.nvim-autopairs"),
-		require("paualberti.plugins.nvim-cmp"),
-		require("paualberti.plugins.nvim-java"),
-		require("paualberti.plugins.nvim-lspconfig"),
-		require("paualberti.plugins.nvim-surround"),
-		require("paualberti.plugins.nvim-treesitter"),
-		require("paualberti.plugins.screenkey"),
-		require("paualberti.plugins.telescope"),
-		require("paualberti.plugins.todo-comments"),
-		require("paualberti.plugins.tokyonight"),
-		require("paualberti.plugins.vim-fugitive"),
-		require("paualberti.plugins.which-key"),
-	},
+	{ import = "paualberti.plugins" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
