@@ -25,6 +25,7 @@ require("paualberti.config.keymaps")
 require("lazy").setup({
 	"tpope/vim-sleuth",
 	{ import = "paualberti.plugins" },
+	"theprimeagen/vim-be-good"
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
