@@ -12,4 +12,8 @@ If you want to make this configuration your own
 ```
 mv ~/.config/nvim/lua/paualberti/ ~/.config/nvim/lua/yourname
 ```
-* Change every reference from paualberti to yourname
+* Change every reference in init.lua from paualberti to yourname
+```
+vim ~/.config/nvim/init.lua
+# or any other text editor
+```
