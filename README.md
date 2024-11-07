@@ -3,17 +3,8 @@
 ## How to use
 ### Setup
 ```
-git clone https://github.com/paualberti/nvim
-mv nvim/ ~/.config/
+git clone https://github.com/paualberti/nvim ~/.config/nvim
 ```
 ### Recommended changes
 If you want to make this configuration your own
-* Change config directory
-```
-mv ~/.config/nvim/lua/paualberti/ ~/.config/nvim/lua/yourname
-```
-* Change every reference of paualberti in init.lua to yourname
-```
-vim ~/.config/nvim/init.lua
-# or any other text editor
-```
+* Change every reference of paualberti to yourname
