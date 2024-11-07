@@ -1,7 +1,7 @@
 # Neovim Configuration
 ## How to use
-### How it looks
-![Alt text](neovim-config-structure.png)
+### Structure
+![Alt text](neovim-tree.png)
 ### Setup
 ```
 git clone https://github.com/paualberti/nvim ~/.config/nvim
