@@ -8,7 +8,7 @@
 
 ### Setup
 
-```bash
+```Bash
 git clone https://github.com/paualberti/nvim ~/.config/nvim
 ```
 
@@ -17,5 +17,4 @@ git clone https://github.com/paualberti/nvim ~/.config/nvim
 If you want to make this configuration your own
 
 * Change every reference of paualberti to yourname
-
   * Directori name and use inside init.lua
