@@ -1,12 +1,21 @@
 # Neovim Configuration
+
 ## How to use
+
 ### Structure
-![Alt text](neovim-tree.png)
+
+![Config tree structure](neovim-tree.png)
+
 ### Setup
-```
+
+```bash
 git clone https://github.com/paualberti/nvim ~/.config/nvim
 ```
+
 ### Recommended changes
+
 If you want to make this configuration your own
+
 * Change every reference of paualberti to yourname
-    - Directori name and use inside init.lua
+
+  * Directori name and use inside init.lua
