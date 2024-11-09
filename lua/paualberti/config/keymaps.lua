@@ -3,15 +3,6 @@ local map = function(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- Function to enable hlsearch temporarily
-function Temporary_hlsearch(seconds) -- Enable hlsearch
-	vim.opt.hlsearch = true
-	local duration_ms = seconds * 1000
-	vim.defer_fn(function()
-		vim.opt.hlsearch = false
-	end, duration_ms)
-end
-
 -- Diagnostic keymaps
 map("n", "<leader>q", vim.diagnostic.setloclist, { noremap = true, silent = true, desc = "[Q]uick_Fix" })
 
@@ -50,12 +41,6 @@ map("n", "x", '"_x')
 map("x", "<leader>p", '"_dP')
 
 map("n", "<leader>e", "<cmd>Ex<CR>")
-map(
-	"n",
-	"<leader>hl",
-	"<cmd>lua Temporary_hlsearch(3) <CR>",
-	{ noremap = true, silent = true, desc = "[H]igh[L]ight search" }
-)
 map("n", "<leader>to", function()
 	vim.cmd("vsplit")
 	vim.cmd("terminal")

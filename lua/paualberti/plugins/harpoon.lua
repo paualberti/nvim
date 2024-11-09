@@ -12,7 +12,7 @@ return {
 
 		-- Keymaps for Harpoon
 		nmap("<leader>a", mark.add_file, { noremap = true, silent = true, desc = "[A]dd file to harpoon" }) -- Add file to Harpoon
-		nmap("<leader>ho", ui.toggle_quick_menu, { noremap = true, silent = true, desc = "[H]arpoon [O]pen" }) -- Toggle Harpoon quick menu
+		nmap("<leader>h", ui.toggle_quick_menu, { noremap = true, silent = true, desc = "[H]arpoon" }) -- Toggle Harpoon quick menu
 
 		-- Map <Tab> to navigate to the next file in Harpoon's Quick Menu
 		nmap("<Tab>", function()
