@@ -11,9 +11,6 @@ autocmd BufEnter * set formatoptions-=cro
 " Resize splits when terminal is resized
 autocmd VimResized * wincmd =
 
-" Italicize comments (uncomment if needed)
-" highlight Comment cterm=italic gui=italic
-
 " Delete trailing whitespace on save
 function! DeleteTrailingWhitespace()
     let save_cursor = getpos(".")

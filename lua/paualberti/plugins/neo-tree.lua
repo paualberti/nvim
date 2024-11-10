@@ -321,9 +321,9 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "\\", function()
-			vim.cmd("Neotree toggle")
-			vim.cmd("set rnu")
-		end, { noremap = true, silent = true })
+		-- vim.keymap.set("n", "\\", function()
+		-- 	vim.cmd("Neotree toggle")
+		-- 	vim.cmd("set rnu")
+		-- end, { noremap = true, silent = true })
 	end,
 }

@@ -40,7 +40,7 @@ map("v", "<leader>d", '"_d')
 map("n", "x", '"_x')
 map("x", "<leader>p", '"_dP')
 
-map("n", "<leader>e", "<cmd>Ex<CR>")
+-- map("n", "<leader>e", "<cmd>Ex<CR>")
 map("n", "<leader>to", function()
 	vim.cmd("vsplit")
 	vim.cmd("terminal")
