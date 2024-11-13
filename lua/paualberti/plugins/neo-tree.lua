@@ -1,6 +1,5 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	lazy = true,
 	branch = "v3.x",
 	opts = {},
 	dependencies = {
@@ -321,9 +320,9 @@ return {
 			},
 		})
 
-		-- vim.keymap.set("n", "\\", function()
-		-- 	vim.cmd("Neotree toggle")
-		-- 	vim.cmd("set rnu")
-		-- end, { noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>\\", function()
+			vim.cmd("Neotree toggle")
+			vim.cmd("set nu rnu")
+		end, { noremap = true, silent = true })
 	end,
 }

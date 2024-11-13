@@ -9,4 +9,16 @@ return {
 		"echasnovski/mini.pick",
 	},
 	opts = {},
+	vim.keymap.set(
+		"n",
+		"<leader>mo",
+		"<cmd>LivePreview pick<cr>",
+		{ noremap = true, silent = true, desc = "[M]arkdown [O]pen" }
+	),
+	vim.keymap.set(
+		"n",
+		"<leader>mc",
+		"<cmd>LivePreview close<cr>",
+		{ noremap = true, silent = true, desc = "[M]arkdown [C]lose" }
+	),
 }

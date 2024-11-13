@@ -26,6 +26,7 @@ require("lazy").setup({
 	"tpope/vim-sleuth",
 	{ import = "paualberti.plugins" },
 	"theprimeagen/vim-be-good",
+	"nvim-java/nvim-java",
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

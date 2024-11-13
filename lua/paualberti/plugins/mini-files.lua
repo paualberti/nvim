@@ -55,5 +55,4 @@ return {
 		})
 	end,
 	vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>"),
-	-- vim.keymap.set("n", "\\", "<cmd>lua MiniFiles.open()<cr>"),
 }
