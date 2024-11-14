@@ -11,9 +11,9 @@ return {
 	opts = {},
 	vim.keymap.set(
 		"n",
-		"<leader>mo",
+		"<leader>mp",
 		"<cmd>LivePreview pick<cr>",
-		{ noremap = true, silent = true, desc = "[M]arkdown [O]pen" }
+		{ noremap = true, silent = true, desc = "[M]arkdown [P]ick" }
 	),
 	vim.keymap.set(
 		"n",
