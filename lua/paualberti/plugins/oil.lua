@@ -12,10 +12,10 @@ return {
 		require("oil").setup({
 			columns = { "icon" },
 			keymaps = {
-				["<C-h>"] = false,
-				["<C-l>"] = false,
-				["<C-k>"] = false,
-				["<C-j>"] = false,
+				["<c-h>"] = false,
+				["<c-l>"] = false,
+				["<c-k>"] = false,
+				["<c-j>"] = false,
 				["l"] = "actions.select",
 				["h"] = "actions.parent",
 			},
@@ -34,10 +34,8 @@ return {
 				max_width = 40,
 			},
 		})
-		-- Open parent directory in current window
-		vim.keymap.set("n", "=", "<cmd>Oil<cr>", { desc = "Open parent directory" })
 
 		-- Open parent directory in floating window
-		vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "[E]xplorer" })
+		vim.keymap.set("n", "\\", require("oil").toggle_float, { desc = "[E]xplorer" })
 	end,
 }
