@@ -114,18 +114,18 @@ return {
 				-- If you don't want to use these columns, you can set `enabled = false` for each of them individually
 				file_size = {
 					enabled = true,
-					required_width = 128, -- min width of window required to show this column
+					required_width = 66, -- min width of window required to show this column
 				},
 				type = {
-					enabled = true,
+					enabled = false,
 					required_width = 128, -- min width of window required to show this column
 				},
 				last_modified = {
 					enabled = true,
-					required_width = 64, -- min width of window required to show this column
+					required_width = 54, -- min width of window required to show this column
 				},
 				created = {
-					enabled = true,
+					enabled = false,
 					required_width = 128, -- min width of window required to show this column
 				},
 				symlink_target = {
@@ -138,7 +138,7 @@ return {
 			commands = {},
 			window = {
 				position = "right",
-				width = 25,
+				width = 30,
 				mapping_options = {
 					noremap = true,
 					nowait = true,
@@ -153,7 +153,7 @@ return {
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
 					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
 					-- Read `# Preview Mode` for more information
-					["l"] = "focus_preview",
+					["h"] = "focus_preview",
 					-- ["S"] = "open_split",
 					-- ["s"] = "open_vsplit",
 					["S"] = "split_with_window_picker",
@@ -201,8 +201,8 @@ return {
 			filesystem = {
 				filtered_items = {
 					visible = false, -- when true, they will just be displayed differently than normal items
-					hide_dotfiles = true,
-					hide_gitignored = true,
+					hide_dotfiles = false,
+					hide_gitignored = false,
 					hide_hidden = true, -- only works on Windows for hidden files/directories
 					hide_by_name = {
 						--"node_modules"
@@ -321,7 +321,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>tn", function()
-			vim.cmd("Neotree toggle")
+			vim.cmd("Neotree reveal")
 			vim.cmd("set nu rnu")
 		end, { noremap = true, silent = true, desc = "[T]oggle [N]eotree" })
 	end,
