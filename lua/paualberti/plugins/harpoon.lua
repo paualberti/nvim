@@ -11,30 +11,30 @@ return {
 		end
 
 		-- Keymaps for Harpoon
-		nmap("<leader>a", mark.add_file, { noremap = true, silent = true, desc = "[A]dd file to harpoon" }) -- Add file to Harpoon
-		nmap("<leader>h", ui.toggle_quick_menu, { noremap = true, silent = true, desc = "[H]arpoon" }) -- Toggle Harpoon quick menu
+		nmap("<leader>ha", mark.add_file, { noremap = true, silent = true, desc = "[H]arpoon [A]dd file" }) -- Add file to Harpoon
+		nmap("<leader>hm", ui.toggle_quick_menu, { noremap = true, silent = true, desc = "[H]arpoon [M]enu" }) -- Toggle Harpoon quick menu
 
-		-- Map <Tab> to navigate to the next file in Harpoon's Quick Menu
-		nmap("<Tab>", function()
+		-- Map <tab> to navigate to the next file in Harpoon's Quick Menu
+		nmap("<tab>", function()
 			ui.nav_next()
 		end)
 
-		-- Map <S-Tab> to navigate to the previous file in Harpoon's Quick Menu
-		nmap("<S-Tab>", function()
+		-- Map <s-tab> to navigate to the previous file in Harpoon's Quick Menu
+		nmap("<s-tab>", function()
 			ui.nav_prev()
 		end)
 
-		nmap("<leader>1", function()
+		nmap("<leader>h1", function()
 			ui.nav_file(1)
-		end, { noremap = true, silent = true, desc = "Harpoon file [1]" }) -- Navigate to file 1
-		nmap("<leader>2", function()
+		end, { noremap = true, silent = true, desc = "[H]arpoon file [1]" }) -- Navigate to file 1
+		nmap("<leader>h2", function()
 			ui.nav_file(2)
-		end, { noremap = true, silent = true, desc = "Harpoon file [2]" }) -- Navigate to file 2
-		nmap("<leader>3", function()
+		end, { noremap = true, silent = true, desc = "[H]arpoon file [2]" }) -- Navigate to file 2
+		nmap("<leader>h3", function()
 			ui.nav_file(3)
-		end, { noremap = true, silent = true, desc = "Harpoon file [3]" }) -- Navigate to file 3
-		nmap("<leader>4", function()
+		end, { noremap = true, silent = true, desc = "[H]arpoon file [3]" }) -- Navigate to file 3
+		nmap("<leader>h4", function()
 			ui.nav_file(4)
-		end, { noremap = true, silent = true, desc = "Harpoon file [4]" }) -- Navigate to file 4
+		end, { noremap = true, silent = true, desc = "[H]arpoon file [4]" }) -- Navigate to file 4
 	end,
 }

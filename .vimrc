@@ -26,11 +26,11 @@ autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Show cursorline only in the active window
-augroup CursorLine
-    autocmd!
-    autocmd InsertLeave,WinEnter * set cursorline
-    autocmd InsertEnter,WinLeave * set nocursorline
-augroup END
+" augroup CursorLine
+"     autocmd!
+"     autocmd InsertLeave,WinEnter * set cursorline
+"     autocmd InsertEnter,WinLeave * set nocursorline
+" augroup END
 
 """""""""""
 " Keymaps "

@@ -17,13 +17,13 @@ return {
 			-- Use `''` (empty string) to not create one.
 			mappings = {
 				close = "q",
-				go_in = "L",
+				go_in = "",
 				go_in_plus = "l",
-				go_out = "H",
-				go_out_plus = "h",
+				go_out = "h",
+				go_out_plus = "<bs>",
 				mark_goto = "'",
 				mark_set = "m",
-				reset = "<BS>",
+				reset = "0",
 				reveal_cwd = "@",
 				show_help = "g?",
 				synchronize = "=",
@@ -54,5 +54,10 @@ return {
 			},
 		})
 	end,
-	vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>"),
+	vim.keymap.set(
+		"n",
+		"<leader>e",
+		"<cmd>lua MiniFiles.open()<cr>",
+		{ noremap = true, silent = true, desc = "[E]xplorer" }
+	),
 }

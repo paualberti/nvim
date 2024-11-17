@@ -7,6 +7,5 @@
 ## Setup
 
 ```Bash
-rm -rf ~/.config/nvim
 git clone https://github.com/paualberti/nvim ~/.config/nvim
 ```

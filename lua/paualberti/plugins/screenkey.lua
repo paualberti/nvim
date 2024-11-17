@@ -28,9 +28,11 @@ return {
 			group_mappings = false,
 			display_infront = {},
 			display_behind = {},
+
 			filter = function(keys)
 				return keys
 			end,
+
 			keys = {
 				["<TAB>"] = "󰌒",
 				["<CR>"] = "󰌑",

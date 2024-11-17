@@ -23,10 +23,11 @@ require("paualberti.config.options")
 require("paualberti.config.keymaps")
 
 require("lazy").setup({
-	"tpope/vim-sleuth",
 	{ import = "paualberti.plugins" },
+	"tpope/vim-sleuth",
 	"theprimeagen/vim-be-good",
 	"nvim-java/nvim-java",
+	"evesdropper/luasnip-latex-snippets.nvim",
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

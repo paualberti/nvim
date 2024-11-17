@@ -320,9 +320,9 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>\\", function()
+		vim.keymap.set("n", "<leader>tn", function()
 			vim.cmd("Neotree toggle")
 			vim.cmd("set nu rnu")
-		end, { noremap = true, silent = true })
+		end, { noremap = true, silent = true, desc = "[T]oggle [N]eotree" })
 	end,
 }

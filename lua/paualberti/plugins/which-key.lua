@@ -17,7 +17,7 @@ return { -- Useful plugin to show you pending keybinds.
 					M = "<M-…> ",
 					D = "<D-…> ",
 					S = "<S-…> ",
-					CR = "<CR> ",
+					CR = "<cr> ",
 					Esc = "<Esc> ",
 					ScrollWheelDown = "<ScrollWheelDown> ",
 					ScrollWheelUp = "<ScrollWheelUp> ",
@@ -50,7 +50,9 @@ return { -- Useful plugin to show you pending keybinds.
 			{ "<leader>s", group = "[S]earch" },
 			{ "<leader>w", group = "[W]orkspace" },
 			{ "<leader>t", group = "[T]oggle" },
-			{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+			{ "<leader>m", group = "[M]arkdown" },
+			{ "<leader>h", group = "[H]arpoon" },
+			{ "<leader>x", group = "Trouble" },
 		})
 	end,
 }

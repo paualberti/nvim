@@ -13,7 +13,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
 			-- `cond` is a condition used to determine whether this plugin should be
 			-- installed and loaded.
-			cond = function() return vim.fn.executable("make") == 1 end,
+			cond = function()
+				return vim.fn.executable("make") == 1
+			end,
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 
@@ -67,50 +69,47 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
 
-		local nmap = function(lhs, rhs, opts)
+		local map = function(lhs, rhs, opts)
 			vim.keymap.set("n", lhs, rhs, opts)
 		end
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
-		nmap("<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-		nmap("<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-		nmap("<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-		nmap("<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-		nmap("<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-		nmap("<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-		nmap("<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-		nmap("<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-		nmap("<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-		nmap("<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+		map("<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+		map("<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+		map("<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+		map("<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+		map("<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+		map("<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+		map("<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+		map("<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
+		map("<leader>so", builtin.oldfiles, { desc = "[S]earch [O]ld files" })
+		map("<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
 
 		-- Slightly advanced example of overriding default behavior and theme
-		nmap("<leader>/", function()
+		map("<leader>sc", function()
 			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
-			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-				winblend = 0,
-				previewer = false,
-			}))
-		end, { desc = "[/] Fuzzily search in current buffer" })
+			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({}))
+		end, { desc = "[S]earch [C]urrent buffer" })
 
 		-- It's also possible to pass additional configuration options.
 		--  See `:help telescope.builtin.live_grep()` for information about particular keys
-		nmap("<leader>s/", function()
+		map("<leader>st", function()
 			builtin.live_grep({
 				grep_open_files = true,
 				prompt_title = "Live Grep in Open Files",
 			})
-		end, { desc = "[S]earch [/] in Open Files" })
+		end, { desc = "[S]earch by [T]ext" })
 
 		-- Shortcut for searching your Neovim configuration files
-		nmap("<leader>sn", function()
+		map("<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
 
 		local ignore_patterns = {
-			"*.o",
-			"*.d",
-			"build/*",
+			"%.o",
+			"%.d",
+			"%.json",
 		}
 		require("telescope.config").set_defaults({
 			file_ignore_patterns = ignore_patterns,
