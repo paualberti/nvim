@@ -16,6 +16,7 @@ return {
 				["<c-l>"] = false,
 				["<c-k>"] = false,
 				["<c-j>"] = false,
+				["-"] = false,
 				["l"] = "actions.select",
 				["h"] = "actions.parent",
 			},
@@ -30,12 +31,14 @@ return {
 				end,
 			},
 			float = {
-                max_height = 20,
+				max_height = 20,
 				max_width = 40,
 			},
 		})
 
+		-- Open parent directory in normal window
+		vim.keymap.set("n", "\\", "<cmd>Oil<cr>", { noremap = true, silent = true })
 		-- Open parent directory in floating window
-		vim.keymap.set("n", "\\", require("oil").toggle_float, { desc = "[E]xplorer" })
+		vim.keymap.set("n", "-", require("oil").toggle_float, { noremap = true, silent = true })
 	end,
 }
