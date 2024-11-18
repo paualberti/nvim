@@ -5,7 +5,6 @@ return {
 		CustomOilBar = function()
 			local path = vim.fn.expand("%")
 			path = path:gsub("oil://", "")
-
 			return "  " .. vim.fn.fnamemodify(path, ":.")
 		end
 
@@ -26,8 +25,21 @@ return {
 			view_options = {
 				show_hidden = true,
 				is_always_hidden = function(name, _)
+					-- List of folders to always hide
 					local folder_skip = { "dev-tools.locks", "dune.lock", "_build" }
-					return vim.tbl_contains(folder_skip, name)
+					if vim.tbl_contains(folder_skip, name) then
+						return true
+					end
+
+					-- Patterns for files to hide
+					local file_patterns = { "%.class$", "%.o$", "%.d$" }
+					for _, pattern in ipairs(file_patterns) do
+						if name:match(pattern) then
+							return true
+						end
+					end
+
+					return false
 				end,
 			},
 			float = {

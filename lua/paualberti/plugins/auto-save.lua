@@ -1,7 +1,6 @@
 return {
 	"Pocco81/auto-save.nvim",
 	config = function()
-        vim.cmd("ASToggle")
 		require("auto-save").setup({
 			-- your config goes here
 			-- or just leave it empty :)

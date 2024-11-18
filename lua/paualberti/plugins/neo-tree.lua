@@ -210,6 +210,10 @@ return {
 					hide_by_pattern = { -- uses glob style patterns
 						--"*.meta",
 						--"*/src/*/tsconfig.json",
+                        "*.json",
+                        "*.class",
+                        "*.o",
+                        "*.d",
 					},
 					always_show = { -- remains visible even if other settings would normally hide it
 						--".gitignored",

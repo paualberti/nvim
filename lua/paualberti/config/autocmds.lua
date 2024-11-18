@@ -34,16 +34,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- autosave markdown files
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*.md",
-	callback = function()
-		if vim.fn.exists(":ASToggle") == 2 then
-			vim.cmd("ASToggle")
-		end
-	end,
-})
-
 -- -- show cursor line only in active window
 -- local cursorGrp = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 -- vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
