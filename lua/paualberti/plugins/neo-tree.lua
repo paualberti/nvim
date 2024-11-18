@@ -210,10 +210,10 @@ return {
 					hide_by_pattern = { -- uses glob style patterns
 						--"*.meta",
 						--"*/src/*/tsconfig.json",
-                        "*.json",
-                        "*.class",
-                        "*.o",
-                        "*.d",
+						"*.json",
+						"*.class",
+						"*.o",
+						"*.d",
 					},
 					always_show = { -- remains visible even if other settings would normally hide it
 						--".gitignored",
@@ -326,7 +326,6 @@ return {
 
 		vim.keymap.set("n", "<leader>tn", function()
 			vim.cmd("Neotree reveal")
-			vim.cmd("set nu rnu")
 		end, { noremap = true, silent = true, desc = "[T]oggle [N]eotree" })
 	end,
 }
