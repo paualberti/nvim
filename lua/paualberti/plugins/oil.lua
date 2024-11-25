@@ -26,13 +26,22 @@ return {
 				show_hidden = true,
 				is_always_hidden = function(name, _)
 					-- List of folders to always hide
-					local folder_skip = { "dev-tools.locks", "dune.lock", "_build" }
+					local folder_skip = {
+						".git",
+						"..",
+					}
 					if vim.tbl_contains(folder_skip, name) then
 						return true
 					end
 
 					-- Patterns for files to hide
-					local file_patterns = { "%.class$", "%.o$", "%.d$" }
+					local file_patterns = {
+						"%.class$",
+						"%.o$",
+						"%.d$",
+						"%.png",
+						"%.jpg",
+					}
 					for _, pattern in ipairs(file_patterns) do
 						if name:match(pattern) then
 							return true

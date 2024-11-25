@@ -22,10 +22,10 @@ map("n", "N", "Nzzzv", { noremap = true, silent = false }) -- Center viewkey
 map("n", "Q", "<nop>") -- Disable Q
 map("i", "<c-c>", "<esc>") -- Standardize <esc>
 map("n", "<leader><leader>", "<esc>") -- Disable <space>
-map("n", "<c-Up>", "<c-w>3+") -- Increase window height
-map("n", "<c-Down>", "<c-w>3-") -- Decrease window height
-map("n", "<c-Right>", "<c-w>3>") -- Increase window width
-map("n", "<c-Left>", "<c-w>3<") -- Decrease window width
+map("n", "<c-Up>", "<c-w>5+") -- Increase window height
+map("n", "<c-Down>", "<c-w>5-") -- Decrease window height
+map("n", "<c-Right>", "<c-w>5>") -- Increase window width
+map("n", "<c-Left>", "<c-w>5<") -- Decrease window width
 
 -- Better navigation
 map("n", "<c-h>", "<c-w>h")
