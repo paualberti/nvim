@@ -49,6 +49,6 @@ vim.opt.splitbelow = true
 vim.opt.autochdir = false
 vim.opt.iskeyword:append("-")
 vim.opt.mouse = ""
-vim.opt.clipboard = ""
+vim.opt.clipboard = "unnamedplus"
 vim.opt.modifiable = true
 vim.opt.encoding = "UTF-8"
