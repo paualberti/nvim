@@ -23,7 +23,7 @@ return {
 				winbar = "%{v:lua.CustomOilBar()}",
 			},
 			view_options = {
-				show_hidden = true,
+				show_hidden = false,
 				is_always_hidden = function(name, _)
 					-- List of folders to always hide
 					local folder_skip = {
