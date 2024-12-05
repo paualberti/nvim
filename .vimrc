@@ -30,6 +30,9 @@ nnoremap <silent> <leader>q :lua vim.diagnostic.setloclist()<CR>
 " Exit terminal mode with <Esc>
 tnoremap <Esc> <C-\><C-n>
 
+" Open netrw
+nnoremap - :Ex<CR>
+
 " Useful keymaps
 nnoremap j gj
 nnoremap k gk
@@ -63,8 +66,8 @@ vnoremap > >gv
 vnoremap <leader>r "hy:%s/<C-r>h/
 
 " Move selected text in visual mode
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m'>+1<CR>gv=gv
+vnoremap K :m'<-2<CR>gv=gv
 
 " Avoid yanking deleted text
 nnoremap x "_x
@@ -102,7 +105,6 @@ set showmode
 set cmdheight=1
 set laststatus=2
 set wrap
-set inccommand=split
 set pumheight=5
 set showtabline=0
 set guicursor=n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait400-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
@@ -116,7 +118,6 @@ set nohidden
 set noerrorbells
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
 set undofile
 set backspace=indent,eol,start
 set splitright

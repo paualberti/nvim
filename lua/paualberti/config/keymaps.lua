@@ -38,8 +38,8 @@ map("v", ">", ">gv") -- Indent right
 map("v", "<leader>r", '"hy:%s/<c-r>h/', { noremap = true, silent = false, desc = "[R]ename" })
 
 -- Move selected line / block of text in visual mode
-map("v", "J", ":m '>+1<cr>gv=gv")
-map("v", "K", ":m '<-2<cr>gv=gv")
+map("v", "J", ":m'>+1<cr>gv=gv")
+map("v", "K", ":m'<-2<cr>gv=gv")
 
 -- Don't yank deleted text
 map({ "n", "v" }, "x", '"_x')
