@@ -24,17 +24,5 @@ return {
 			ui.nav_prev()
 		end)
 
-		nmap("<leader>h1", function()
-			ui.nav_file(1)
-		end, { noremap = true, silent = true, desc = "[H]arpoon file [1]" }) -- Navigate to file 1
-		nmap("<leader>h2", function()
-			ui.nav_file(2)
-		end, { noremap = true, silent = true, desc = "[H]arpoon file [2]" }) -- Navigate to file 2
-		nmap("<leader>h3", function()
-			ui.nav_file(3)
-		end, { noremap = true, silent = true, desc = "[H]arpoon file [3]" }) -- Navigate to file 3
-		nmap("<leader>h4", function()
-			ui.nav_file(4)
-		end, { noremap = true, silent = true, desc = "[H]arpoon file [4]" }) -- Navigate to file 4
 	end,
 }
