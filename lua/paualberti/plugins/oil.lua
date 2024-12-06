@@ -36,11 +36,10 @@ return {
 
 					-- Patterns for files to hide
 					local file_patterns = {
+						"%.json$",
 						"%.class$",
 						"%.o$",
 						"%.d$",
-						"%.png",
-						"%.jpg",
 					}
 					for _, pattern in ipairs(file_patterns) do
 						if name:match(pattern) then
