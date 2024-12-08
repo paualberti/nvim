@@ -83,8 +83,6 @@ return { -- Autocompletion
 				-- ["<cr>"] = cmp.mapping.confirm({ select = true }),
 				-- ["<tab>"] = cmp.mapping.select_next_item(),
 				-- ["<s-tab>"] = cmp.mapping.select_prev_item(),
-				["<tab>"] = cmp.mapping.confirm({ select = true }),
-				["<s-tab>"] = cmp.mapping.abort(),
 
 				-- Manually trigger a completion from nvim-cmp.
 				--  Generally you don't need this, because nvim-cmp will display

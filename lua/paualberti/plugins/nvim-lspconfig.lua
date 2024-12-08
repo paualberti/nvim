@@ -195,7 +195,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 			"checkstyle", -- Used to format java
-            "clang-format",
+			"clang-format",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -211,5 +211,20 @@ return {
 				end,
 			},
 		})
+
+		vim.api.nvim_create_user_command("ToggleDiagnostics", function()
+			local diagnostics_enabled = vim.diagnostic.is_enabled()
+			if diagnostics_enabled then
+				vim.diagnostic.enable(false)
+			else
+				vim.diagnostic.enable()
+			end
+		end, {})
+		vim.keymap.set(
+			"n",
+			"<leader>td",
+			":ToggleDiagnostics<CR>",
+			{ noremap = true, silent = true, desc = "[T]oggle [D]iagnostics" }
+		)
 	end,
 }

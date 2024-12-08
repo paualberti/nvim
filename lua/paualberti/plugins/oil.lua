@@ -18,6 +18,7 @@ return {
 				["-"] = false,
 				["l"] = "actions.select",
 				["h"] = "actions.parent",
+				["q"] = { "actions.close", mode = "n" },
 			},
 			win_options = {
 				winbar = "%{v:lua.CustomOilBar()}",
