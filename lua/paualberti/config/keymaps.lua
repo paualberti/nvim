@@ -43,3 +43,4 @@ map("v", "K", ":m'<-2<cr>gv=gv")
 
 -- Don't yank deleted text
 map({ "n", "v" }, "x", '"_x')
+map("x", "<leader>p", '"_xP')
